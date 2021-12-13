@@ -10,7 +10,8 @@ ul{
 }
 
 .container{
-    max-width: 1180px;
+    width: 1180px;
+    max-width: 90%;
     margin: auto;
     padding: 0 16px;
 }
@@ -40,6 +41,7 @@ header .logo {
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.37px;
+    vertical-align: middle;
 }
 
 header nav {
@@ -49,6 +51,7 @@ header nav {
 
 header nav ul li {
     display: inline-block;
+    vertical-align: middle;
 }
 
 header nav ul li a {
@@ -69,14 +72,24 @@ header nav ul li:last-of-type a {
     margin-right: 0px;
 }
 
-.logo-icon{
+header nav ul li.menu-icon {
+    display: none;
+}
+
+header nav ul li.menu-icon img {
     height: 30px;
     width: 30px;
     vertical-align: middle;
 }
 
+.logo-icon{
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
 .film{
     margin-right: 10px;
+    vertical-align: middle;
 }
 
 section.hero{
@@ -254,6 +267,7 @@ section.best-movies .movie-slider .movie .movie-info button:hover{
 }
 
 footer{
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -320,11 +334,157 @@ footer .copyright{
     line-height: 22px;
 }
 
+/*design for desktop*/
+@media  screen and (max-width: 1440px) {
+    .container{
+        width: 1180px;
+    }
+
+    header{
+        height: 70px;
+    }
+
+    body{
+        padding-top: 70px; /*fixed eleements are not taking space in html flow*/
+    }
+
+    
+section.best-movies .container{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+section.best-movies .movie-slider .movie{
+    min-width: 180px;
+    margin: 18px 8px;
+}
+
+
+
+    
 
 
 
 
+}
+/*end of design for desktop*/
+/*design for tablets*/
+@media  screen and (max-width: 960px) {
+    .container{
+        max-width: 92%;
+    }    
 
+    header nav ul li{
+        display: none;
+    }
+
+    header nav ul li.menu-icon {
+       display: block;
+    }
+
+
+div.hero-content p{
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    width: 60%;
+}
+
+div.hero-content button{ 
+    width: 196px;
+}
+
+section.best-movies .movie-slider .movie{
+    width: 220px;
+    max-width: 80%;
+    margin: 0 8px 10px 8px;
+}
+
+span.like img{
+    
+    top: 15px;
+    right: 15px;
+}
+
+.movie-picture img{
+    max-height: 200px;
+    width: auto;
+}
+
+section.best-movies .movie-slider .movie .movie-info{
+    margin-top: 30px;
+}
+
+section.best-movies .movie-slider .movie .movie-info .categories{
+    font-size: 17px;
+}
+
+section.best-movies .movie-slider .movie .movie-info .movie-title{
+    font-size: 20px;
+    line-height: 22px;   
+}
+
+section.best-movies .movie-slider .movie .movie-info button{
+    font-size: 13px;
+}
+
+
+
+}
+/*end of design for tablets*/
+/*design for mobiles*/
+@media  screen and (max-width: 576px) {
+   
+    
+div.hero-content{
+    position: static;
+}
+
+div.hero-content h1{
+    color: black;
+    text-align: center;
+}
+
+
+div.hero-content p{
+    color: rgb(51, 50, 50);
+    font-size: 15px;
+    text-transform: inherit;
+    margin: auto;
+    align-items: center;
+}
+
+div.hero-content button{ 
+    color: rgb(255, 255, 255);
+    background-color: black;
+    margin: auto;
+}
+
+div.hero-content button:hover{ 
+    transform: scale(1.05);
+}
+
+.movie-picture img{
+    max-height: 300px;
+    width: auto;
+}
+
+section.best-movies .movie-slider .movie .movie-info{
+    margin-top: 30px;
+}
+
+section.best-movies .movie-slider .movie .movie-info button{
+    height: 50px;
+    width: 150px;
+    font-weight: 700;
+    line-height: 15px;
+    border: 0.5px solid rgba(0, 0, 0, 0.616);
+    
+}
+
+
+}
+/*end of design for mobiles*/
 
 
 
