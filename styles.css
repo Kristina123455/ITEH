@@ -278,7 +278,7 @@ footer .footer-nav ul li.list-title{
 }
 
 footer .footer-nav ul li a{
-   color: #e0e0e0E0;
+   color: #3a3939e0;
    font-size: 15px;
    letter-spacing: 0.4px;
     line-height: 22px;
@@ -286,9 +286,12 @@ footer .footer-nav ul li a{
     margin-bottom: 10px;
     text-decoration: none;
     display: block; 
+    font-weight: 550;
 }
 
-
+footer .footer-nav ul li a:hover{
+    color: black;
+ }
 
 footer .footer-nav{
     background-color: grey;
@@ -298,6 +301,11 @@ footer .footer-nav{
 .social-media-icon {
     width: 20px;
     height: 20px;
+    opacity: 0.4;
+}
+
+.social-media-icon:hover {
+    opacity: 1;
 }
 
 footer .copyright{
