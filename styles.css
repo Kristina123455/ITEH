@@ -126,7 +126,7 @@ div.hero-content button{
     width: 220px;
     max-width: 100%;
     border-radius: 90px;
-    background-color: rgb(153, 146, 146);
+    background-color: rgb(255, 255, 255);
     color: black;
     font-size: 15px;
     font-weight: 700;
@@ -136,6 +136,11 @@ div.hero-content button{
     line-height: 23px;
     border: none;
     cursor: pointer;
+}
+
+div.hero-content button:hover{ 
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 section.best-movies{
@@ -176,6 +181,25 @@ section.best-movies .movie-slider .movie{
     width: 13%;
     margin: 0 8px 0 8px;
     padding: 40px;
+    position: relative;
+}
+
+span.like{
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+span.like img{
+    width: 15%;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+span.like img:hover{
+    transform: scale(1.2);
 }
 
 .movie-picture img{
@@ -188,11 +212,12 @@ section.best-movies .movie-slider .movie .movie-info{
 }
 
 section.best-movies .movie-slider .movie .movie-info .categories{
-    color: rgb(65, 60, 60);
+    color: rgb(85, 106, 199);
     font-weight: normal;
     line-height: 20px;
     margin-bottom: 8px;
     margin-top: 0;
+    font-weight: 450;
 }
 
 section.best-movies .movie-slider .movie .movie-info .movie-title{
@@ -218,6 +243,11 @@ section.best-movies .movie-slider .movie .movie-info button{
     cursor: pointer;
 }
 
+section.best-movies .movie-slider .movie .movie-info button:hover{
+    color: whitesmoke;
+    background-color: black;
+    
+}
 
 
 
