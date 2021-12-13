@@ -1,7 +1,6 @@
 body{
     margin: 0;
     padding-top: 80px; /*fixed eleements are not taking space in html flow*/
-    min-height: 3000px;
 }
 
 
@@ -59,6 +58,11 @@ header nav ul li a {
     letter-spacing: 0.37px;
     margin-right: 24px;
     text-decoration: none;
+}
+
+header nav ul li a:hover {
+    color: black;
+    font-weight: 700;
 }
 
 header nav ul li:last-of-type a {
@@ -249,7 +253,64 @@ section.best-movies .movie-slider .movie .movie-info button:hover{
     
 }
 
+footer{
+    text-align: center;
+}
 
+footer .footer-nav .container{
+    max-width: 955px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-nav ul{
+    list-style: none;
+}
+
+footer .footer-nav ul li.list-title{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    line-height: 26px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+footer .footer-nav ul li a{
+   color: #e0e0e0E0;
+   font-size: 15px;
+   letter-spacing: 0.4px;
+    line-height: 22px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block; 
+}
+
+
+
+footer .footer-nav{
+    background-color: grey;
+    padding: 60px 0;
+}
+
+.social-media-icon {
+    width: 20px;
+    height: 20px;
+}
+
+footer .copyright{
+    background-color: #2B2B2B;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    line-height: 22px;
+}
 
 
 
