@@ -73,6 +73,7 @@ header nav ul li:last-of-type a {
 }
 
 header nav ul li.menu-icon {
+    cursor: pointer;
     display: none;
 }
 
@@ -196,6 +197,7 @@ section.best-movies .movie-slider .movie{
     border-radius: 8px ;
     text-align: center;
     width: 13%;
+    max-height: 450px;
     margin: 0 8px 0 8px;
     padding: 40px;
     position: relative;
@@ -266,50 +268,46 @@ section.best-movies .movie-slider .movie .movie-info button:hover{
     
 }
 
-footer{
-    margin-top: 20px;
-    text-align: center;
+footer .footer-nav{
+    background-color: grey;
+    padding: 60px 0;
 }
 
+
 footer .footer-nav .container{
-    max-width: 955px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 footer .footer-nav ul{
     list-style: none;
+    text-align: center;
 }
+
+footer .footer-nav ul li a{
+    color: #3a3939e0;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+     line-height: 22px;
+     margin-top: 0;
+     margin-bottom: 10px;
+     text-decoration: none;
+     display: block; 
+     font-weight: 550;
+ }
+
+ footer .footer-nav ul li a:hover{
+    color: black;
+ }
 
 footer .footer-nav ul li.list-title{
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.6px;
-    line-height: 26px;
+    letter-spacing: 0.4px;
+    line-height: 22px; 
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: white;
-}
-
-footer .footer-nav ul li a{
-   color: #3a3939e0;
-   font-size: 15px;
-   letter-spacing: 0.4px;
-    line-height: 22px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-decoration: none;
-    display: block; 
-    font-weight: 550;
-}
-
-footer .footer-nav ul li a:hover{
-    color: black;
- }
-
-footer .footer-nav{
-    background-color: grey;
-    padding: 60px 0;
 }
 
 .social-media-icon {
@@ -482,6 +480,18 @@ section.best-movies .movie-slider .movie .movie-info button{
     
 }
 
+footer .footer-nav .container{
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer-nav ul{
+    margin-bottom: 32px;
+}
+
+footer .footer-nav ul:last-of-type{
+margin-bottom: 0%;
+}
 
 }
 /*end of design for mobiles*/
