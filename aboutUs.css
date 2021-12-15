@@ -79,6 +79,7 @@ div.member-info p{
     overflow-y: scroll;
     font-size: 20px;
     line-height: 25px;
+    resize: none;
 }
 
 div.contact-us{
@@ -243,9 +244,251 @@ div.FAQ .FAQ-box .answer{
     margin: 10px;
 }
 
+/*MEDIA*/
+
+ /*design for desktop*/
+@media  screen and (max-width: 1440px) {
+   /*everything works*/
+}
+/*end of design for desktop*/
+/*design for tablets*/
+@media  screen and (max-width: 960px) {
+  
+    div.about-us {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(95, 158, 160, 0.432);
+        border-radius: 20px;
+    }
+    
+    div.about-us p {
+        height: 250px;
+        overflow-y: scroll;
+    }
+    div.about-us img {
+        margin: auto;
+        width: 80%;
+        height: auto;
+        align-self: center;
+        margin-bottom: 15px;
+    }
+    
+    
+    div.image img{
+        height: 250px;
+    }
+    
+    div.member-info h3{
+        font-size: 30px;
+    }
+    
+    div.member-info p{
+        max-height: 170px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    
+    div.contact-content .message p{
+        font-size: 20px;
+    }
+    
+    div.contact-content .message img{
+        width: 35px;
+        margin: 0 5px;
+    }
+
+    .email-form input{
+        height: 25px;
+        width: 100%;
+        font-size: 15px;
+    }
+    
+    .email-form textarea {
+        font-size: 15px;
+        overflow-y:scroll ;
+    }
+
+    .email-form button{
+        font-size: 15px;
+        font-weight: 700;
+    }
+    
+    .email-form img{
+        top: 7px;
+        right: 7px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .email-info img{
+        width: 40px;
+        height: 40px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    
+    .email-info:last-of-type img{
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .email-info ul li:first-of-type{
+        margin-top: 20px;
+    }
+
+    .email-info ul li{
+        font-size: 17px;
+        line-height: 30px;
+        margin-bottom: 35px;
+    }
+    
+    .email-info ul li:last-of-type{
+        margin-bottom: 0px;
+    }
 
 
+}
+/*end of design for tablets*/
+/*design for mobiles*/
+@media  screen and (max-width: 576px) {
 
+    
+    div.about-us h1 {
+        font-size: 25px;
+    }
+
+hr{
+    border: none;
+    border-top: 2px solid rgb(15, 15, 15);
+    width: 75px;
+}
+
+div.team-member{
+    display: flex;
+    flex-direction: column;
+}
+
+div.image img{
+    display: flex;
+    height: 150px;
+    margin: 0 auto;
+}
+
+div.member-info h3{
+    font-size: 30px;
+    margin: 0px auto;
+}
+
+div.member-info p{
+    display: block;
+    margin: 10px 20px;
+    max-height: 180px;
+}
+
+div.contact-content .message p{
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+
+div.contact-content .message img{
+    width: 30px;
+    margin: 0 5px;
+}
+
+div.contact-content .email-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-form{
+    width: 70%;
+    align-items: center;
+    margin: 10px 10px 0 10px;
+}
+
+.email-form input{
+    height: 25px;
+    font-size: 15px;
+    width: 85%;
+}
+
+.email-form textarea {
+    max-width: 85%;
+}
+
+.email-form button{
+    height: 40px;
+    font-size: 15px;
+}
+
+.email-form img{
+    display: none;
+}
+
+.email-info{
+    width: 100%;
+    margin: 0 10px 10px 10px;
+}
+
+.email-info img{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.email-info ul li{
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.email-info ul li:last-of-type{
+    margin-bottom: 0;
+}
+
+div.FAQ {
+    margin: 10px;
+    background-color: cornsilk;
+    margin-bottom: 30px;
+}
+
+div.FAQ h1{
+    font-size: 16px;
+}
+
+div.FAQ h1 img{
+    vertical-align: middle;
+    height: 30px;
+    width: auto;
+}
+
+div.FAQ .FAQ-box .question{
+    position: relative;
+    margin: 10px 10px 0 10px;
+    padding-right: 20px;
+    font-size: 13px;
+}
+
+div.FAQ .FAQ-box .question img{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+div.FAQ .FAQ-box .answer{
+    margin: 10px;
+    font-size: 13px;
+}
+
+}
+/*end of design for mobiles*/
+   
 
 
 
