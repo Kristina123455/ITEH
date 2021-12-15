@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding-top: 80px; /*fixed eleements are not taking space in html flow*/
+}
+
+.container{
+    width: 1180px;
+    max-width: 90%;
+    margin: auto;
+    padding: 0 16px;
+}
+
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+div.about-us {
+    display: flex;
+    flex-direction: row;
+}
+
+div.about-us h1 {
+    text-align: center;
+}
+
+div.about-us p {
+    margin: 10px;
+    padding: 0;
+    font-size: 15;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+div.about-us img {
+    width: 50%;
+    max-width: 600px;
+    height: 50%;
+    max-height: 600px;
+    margin: auto 0;
+}
+
