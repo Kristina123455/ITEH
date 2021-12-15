@@ -193,6 +193,57 @@ div.contact-content .email-box {
     margin-bottom: 0;
 }
 
+div.FAQ {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 15px;
+    background-color: cornsilk;
+    margin-bottom: 50px;
+}
+
+div.FAQ h1{
+    text-align: center;
+}
+
+div.FAQ h1 img{
+    vertical-align: middle;
+    height: 50px;
+    width: auto;
+}
+
+div.FAQ .FAQ-box{
+    border-bottom: 1px solid black;
+}
+
+div.FAQ .FAQ-box:last-of-type{
+    border-bottom: none;
+}
+
+div.FAQ .FAQ-box .question{
+    position: relative;
+    margin: 10px 10px 0 10px;
+    padding-right: 70px;
+}
+
+div.FAQ .FAQ-box .question.question:last-of-type { 
+    border-bottom: 0;
+}
+
+div.FAQ .FAQ-box .question img{
+    position: absolute;
+    top: 0;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+div.FAQ .FAQ-box .answer{
+    display: none;
+    margin: 10px;
+}
+
+
 
 
 
