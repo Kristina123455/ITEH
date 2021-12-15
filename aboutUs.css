@@ -41,3 +41,67 @@ div.about-us img {
     margin: auto 0;
 }
 
+div.our-team h1{
+    text-align: center;
+}
+
+hr{
+    border: none;
+    border-top: 5px solid rgb(15, 15, 15);
+    width: 100px;
+}
+
+div.team-member{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 15px;
+}
+
+div.image img{
+    padding: 15px;
+    height: 300px;
+    
+}
+
+div.member-info h3{
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    margin: 20px auto;
+}
+
+div.member-info p{
+    display: block;
+    margin: 15px;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
