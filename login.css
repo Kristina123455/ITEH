@@ -76,3 +76,15 @@ div.sign-up-alt a:hover{
     text-decoration: underline;
     font-weight: 700;
 }
+
+
+@media screen and (max-width: 576px) {
+    div.sign-in img{
+        display: none;
+    }
+}
+
+
+
+
+
