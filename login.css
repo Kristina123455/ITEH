@@ -65,6 +65,7 @@ div.form-info button{
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 3px;
+    cursor: pointer;
 }
 
 div.sign-up-alt {
