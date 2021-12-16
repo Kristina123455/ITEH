@@ -3,11 +3,61 @@ body{
     padding-top: 80px; /*fixed eleements are not taking space in html flow*/
 }
 
+h2{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+div.container div.search{
+    margin-right: 20px;
+    display: flex;
+    float: right;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+div.container div.search input{
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 5px 10px;
+    min-width: 200px;
+    max-width: 300px;
+    border-radius: 20px 0 0 20px;
+    border: 1.5px  solid black;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    box-sizing: border-box;
+}
+
+div.container div.search button{
+    position: relative;
+    margin-bottom: 10px;
+    height: 40px;
+    min-width: 70px;
+    max-width: 200px;
+    border-radius: 0 20px 20px 0;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+div.container div.search img{
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    cursor: pointer;
+}
+
 table{
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
     min-width: 400px;
-    margin: 50px 0;
+    margin: 30px 0;
 }
 
 td{
@@ -43,8 +93,7 @@ div.table{
 }
 
 table.saved-movies{
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
 }
 
 table.saved-movies img{
