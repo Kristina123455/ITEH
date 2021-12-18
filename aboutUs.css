@@ -53,10 +53,55 @@ hr{
 
 div.team-member{
     display: flex;
+    display: none;
     flex-direction: row;
     border: 2px solid black;
     border-radius: 20px;
     margin: 15px;
+}
+
+div.team-member:first-of-type{
+    display: flex;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  div.slide-show{
+      position: relative;
+  }
+
+div.slide-show a.button img{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    height: 30px;
+
+}
+
+div.slide-show a.button img.previous{
+    left: 20px;
+    z-index: 3;
+}
+
+div.slide-show a.button img.next{
+    right: 20px;
+    z-index: 3;
 }
 
 div.image img{
@@ -365,10 +410,19 @@ hr{
     width: 75px;
 }
 
+
+
 div.team-member{
-    display: flex;
+    display: none;
     flex-direction: column;
 }
+
+div.slide-show a.button img{
+    top: 30%;
+    height: 20px;
+
+}
+
 
 div.image img{
     display: flex;
