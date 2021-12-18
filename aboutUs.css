@@ -284,6 +284,20 @@ div.FAQ .FAQ-box .question img{
     cursor: pointer;
 }
 
+summary::marker{
+    color: cornsilk;;
+}
+
+.arrow-up img{
+    position: absolute;
+    top: 0;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    transform: scaleY(-1);    
+}
+
 div.FAQ .FAQ-box .answer{
     display: block;
     margin: 10px;
