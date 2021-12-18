@@ -271,7 +271,7 @@ div.FAQ .FAQ-box .question{
     padding-right: 70px;
 }
 
-div.FAQ .FAQ-box .question.question:last-of-type { 
+div.FAQ .FAQ-box .question:last-of-type { 
     border-bottom: 0;
 }
 
@@ -285,7 +285,7 @@ div.FAQ .FAQ-box .question img{
 }
 
 div.FAQ .FAQ-box .answer{
-    display: none;
+    display: block;
     margin: 10px;
 }
 
