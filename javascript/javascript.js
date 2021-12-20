@@ -16,6 +16,4 @@ function showSlide(n){
     slides[slideIndex-1].style.display="flex";
 }
 
-function myfunction(){
-    
-}
+
