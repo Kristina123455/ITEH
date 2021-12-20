@@ -10,23 +10,23 @@
     <link rel="stylesheet" href="settings.css">
 </head>
 <body>
-     
+    
     <header>
         <div class="container">
             <section class="logo"> <a href="#"><img src="images/film.png" alt="film" class="logo-icon film"><strong>Movies</strong></a></section>
 
              <nav>
             <ul>
-                <li><a href="index.html#movies">Movies</a></li>
-                <li><a href="aboutUs.html">About us</a></li>
-                <li><a href="aboutUs.html#contactus">Contact</a></li>
+                <li><a href="movies.php#movies">Movies</a></li>
+                <li><a href="aboutUs.php">About us</a></li>
+                <li><a href="aboutUs.php#contactus">Contact</a></li>
                 <li class="profile-menu">
                     <a href="#"><img src="images/profile-user.png" alt="profile" class="logo-icon"></a>
                     <div class="sub-menu">
                     <div class="dropdown-menu">
-                        <a href="profile.html"><img src="images/saved.png" alt="saved">Saved movies</a>
-                        <a href="settings.html">My profile</a>
-                        <a href="login.html">Log out <img src="images/logout.png" alt="out"></a>
+                        <a href="profile.php"><img src="images/saved.png" alt="saved">Saved movies</a>
+                        <a href="settings.php">My profile</a>
+                        <a href="index.php">Log out <img src="images/logout.png" alt="out"></a>
                     </div>
                     </div>
                 </li>
@@ -34,11 +34,11 @@
                 <div class="ham-menu">
                 <div class="sub-menu-small-desktops">
                 <a href="#">Movies</a>
-                <a href="aboutUs.html">About us</a>
-                <a href="aboutUs.html#contactus">Contact</a>
-                <a href="profile.html"><img src="images/saved.png" alt="saved">Saved movies</a>
-                <a href="settings.html">My profile</a>
-                <a href="login.html">Log out <img src="images/logout.png" alt="out"></a>
+                <a href="aboutUs.php">About us</a>
+                <a href="aboutUs.php#contactus">Contact</a>
+                <a href="profile.php"><img src="images/saved.png" alt="saved">Saved movies</a>
+                <a href="settings.php">My profile</a>
+                <a href="index.php">Log out <img src="images/logout.png" alt="out"></a>
                 </div>
                 </div>
                 </li>
@@ -85,13 +85,13 @@
             <div class="container">
                 <ul>
                     <li class="list-title">Categories</li>
-                    <li><a href="index.html#movies">Movies</a></li>
+                    <li><a href="movies.php#movies">Movies</a></li>
                     <li><a href="#">??????</a></li>
                 </ul>
                 <ul>
                     <li class="list-title">About us</li>
-                    <li><a href="aboutUs.html#our-story">Our story</a></li>
-                    <li><a href="aboutUs.html#our-team">Our team</a></li>
+                    <li><a href="aboutUs.php#our-story">Our story</a></li>
+                    <li><a href="aboutUs.php#our-team">Our team</a></li>
                 </ul>
                 <ul>
                     <li class="list-title">Social media</li>
@@ -100,8 +100,8 @@
                 </ul>
                 <ul>
                     <li class="list-title">Customer service</li>
-                    <li><a href="aboutUs.html#contactus">Contact</a></li>
-                    <li><a href="aboutUs.html#FAQ">FAQ</a></li>
+                    <li><a href="aboutUs.php#contactus">Contact</a></li>
+                    <li><a href="aboutUs.php#FAQ">FAQ</a></li>
                 </ul>
             </div>
         </div>
