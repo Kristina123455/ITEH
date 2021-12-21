@@ -1,3 +1,29 @@
+<?php
+
+require "php/databaseBroker.php";
+require "php/savedmovies.php";
+
+session_start();
+
+if(!isset($_SESSION['user_id'])){
+    header('Location: index.php');
+    exit();
+}
+
+$data = Movie::getAll($conn);
+
+if(!$data){
+    echo "Error!";
+    die();
+}
+
+if($data->num_rows==0){
+    echo "Nothing saved.";
+    die();
+}
+else {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,48 +91,23 @@
             <th>Delete</th>
         </thead>
         <tbody>
+
+        <?php
+            while($row = $data->fetch_array()):
+        ?>
+
             <tr>
-                <td>Movie titel</td>
-                <td>Comedy-family</td>
-                <td>Actor name</td>
-                <td><img src="images/share.png" alt="share"></td>
-                <td><img src="images/bin.png" alt="bin"></td>
+                <td><?php echo $row["movie_title"] ?></td>
+                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["actors"] ?></td>
+                <td><img src="images/share.png" alt="share" id="share-movie"></td>
+                <td><img src="images/bin.png" alt="bin" id="delete-movie"></td>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <?php
+            endwhile;
+        }
+            ?>
+           
 
         </tbody>
         <tfoot>
