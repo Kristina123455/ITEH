@@ -172,6 +172,11 @@ header nav ul li.menu-icon:hover div.sub-menu-small-desktops{
     vertical-align: middle;
 }
 
+.welcome h2{
+    text-align: center;
+    letter-spacing: 1px;
+}
+
 section.hero{
     position: relative;
 }
