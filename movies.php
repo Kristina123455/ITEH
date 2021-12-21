@@ -1,5 +1,8 @@
 <?php
+
 session_start();
+include "php/databaseBroker.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +33,7 @@ session_start();
                     <div class="dropdown-menu">
                         <a href="profile.php"><img src="images/saved.png" alt="saved">Saved movies</a>
                         <a href="settings.php">My profile</a>
-                        <a href="index.php">Log out <img src="images/logout.png" alt="out"></a>
+                        <a href="php/logout.php">Log out <img src="images/logout.png" alt="out"></a>
                     </div>
                     </div>
                 </li>
@@ -42,7 +45,7 @@ session_start();
                 <a href="aboutUs.php#contactus">Contact</a>
                 <a href="profile.php"><img src="images/saved.png" alt="saved">Saved movies</a>
                 <a href="settings.php">My profile</a>
-                <a href="index.php">Log out <img src="images/logout.png" alt="out"></a>
+                <a href="php/logout.php">Log out <img src="images/logout.png" alt="out"></a>
                 </div>
                 </div>
                 </li>
@@ -50,6 +53,12 @@ session_start();
             </nav>
         </div>
     </header>
+
+    <section class="welcome-user">
+        <div class="container">
+        <div class="welcome"><h2>Welcome <?php echo $_SESSION['user_firstname'] ?> </h2></div>
+        </div>
+    </section>
 
     <section class="hero">
     <div class="hero">
