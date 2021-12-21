@@ -1,3 +1,7 @@
+<?php
+include "php/databaseBroker.php";
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,7 @@
 
         <div class="sign-up">
             <img src="images/hello.png" alt="welcome">
-            <form action="" method="post">
+            <form action="php/registerUser.php" method="post">
                 <h2>Register</h2>
                 <p>Create your account</p>
                 <div class="form-info">
@@ -27,7 +31,7 @@
                     <div class="box">
                     <label ><input type="checkbox" class="checkbox" name="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a></label>
                     </div>
-                    <button type="submit" name="add" value="addUser">Register Now</button>
+                    <button type="submit" name="register" value="addUser">Register Now</button>
                 </div>
                 <div class="sign-in-alt">Already have an account? <a href="index.php">Sign in</a></div>
             </form>
