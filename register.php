@@ -31,7 +31,7 @@ include "php/databaseBroker.php";
                     <div class="box">
                     <label ><input type="checkbox" class="checkbox" name="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a></label>
                     </div>
-                    <button type="submit" name="register" value="addUser">Register Now</button>
+                    <button type="submit" name="register" value="register">Register Now</button>
                 </div>
                 <div class="sign-in-alt">Already have an account? <a href="index.php">Sign in</a></div>
             </form>
