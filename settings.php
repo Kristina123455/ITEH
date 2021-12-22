@@ -26,7 +26,7 @@
                     <div class="dropdown-menu">
                         <a href="profile.php"><img src="images/saved.png" alt="saved">Saved movies</a>
                         <a href="settings.php">My profile</a>
-                        <a href="index.php">Log out <img src="images/logout.png" alt="out"></a>
+                        <a href="php/logout.php">Log out <img src="images/logout.png" alt="out"></a>
                     </div>
                     </div>
                 </li>
@@ -38,7 +38,7 @@
                 <a href="aboutUs.php#contactus">Contact</a>
                 <a href="profile.php"><img src="images/saved.png" alt="saved">Saved movies</a>
                 <a href="settings.php">My profile</a>
-                <a href="index.php">Log out <img src="images/logout.png" alt="out"></a>
+                <a href="php/logout.php">Log out <img src="images/logout.png" alt="out"></a>
                 </div>
                 </div>
                 </li>
