@@ -1,9 +1,5 @@
-
 <?php
-
     include "php/databaseBroker.php";
-    session_start();
-    
 ?>
 
 <!DOCTYPE html>
