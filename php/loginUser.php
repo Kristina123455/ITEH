@@ -4,7 +4,6 @@ if(isset($_POST['login']))
 {
     extract($_POST);
     include 'databaseBroker.php';
-    extract($_POST);
     $sql=mysqli_query($conn,"SELECT * FROM user where email='$email' and password='$password'");
     $row  = mysqli_fetch_array($sql);
     if(is_array($row))
@@ -16,10 +15,7 @@ if(isset($_POST['login']))
     }
     else
     {
-        echo `<script type="text/javascript>`;
-        echo `alert("Invalid Email or Password, try again.")`;
-        echo `window.location.href="index.php"`;
-        echo `</script>`;
+        echo "Incorrect username or password. " ?> <a href="../index.php">Try again</a> <?php ".";
     }
     if(isset($_SESSION['user_email'])){
         header("Location: ../movies.php");
