@@ -1,11 +1,11 @@
 <?php
 
 require "php/databaseBroker.php";
-require "php/savedmovies.php";
+require "php/movieclass.php";
 
 session_start();
 
-if(!isset($_SESSION['user_id'])){
+if(!isset($_SESSION['user_email'])){
     header('Location: index.php');
     exit();
 }
