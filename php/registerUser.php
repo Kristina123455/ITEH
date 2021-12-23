@@ -14,6 +14,7 @@ if(isset($_POST['register']))
     else {
         $query="INSERT INTO user VALUES (null,'$firstName', '$lastName', '$email', '$password')";
         $sql=mysqli_query($conn,$query);
+        $_SESSION["user_id"]=$row['id'];
         $_SESSION["user_email"] = $_POST['email'];
         $_SESSION["user_pass"]=$_POST['password'];
         $_SESSION["user_firstname"] = $_POST['firstName'];
