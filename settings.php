@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    include "php/databaseBroker.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,26 +59,26 @@
     
         <div class="info-box">
         <label for="first-name">First name</label>
-        <input type="text" id="first-name" placeholder="First Name" required="required">
+        <input type="text" id="first-name" placeholder="First Name" value="<?php echo $_SESSION['user_firstname'] ?>">
         </div>
 
         <div class="info-box">
         <label for="last-name">Last name</label>
-        <input type="text" id="last-name" placeholder="Last Name" required="required">   
+        <input type="text" id="last-name" placeholder="Last Name" value="<?php echo $_SESSION['user_lastname'] ?>">   
         </div>
     
         <div class="info-box">
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Email" required="required">
+        <input type="email" id="email" placeholder="Email" value="<?php echo $_SESSION['user_email'] ?>">
         </div>
 
         <div class="info-box">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Password" required="required">
+        <input type="password" id="password" placeholder="Password" value="<?php echo $_SESSION['user_pass'] ?>">
         </div>
 
         <hr>
-
+        
         <button type="submit">Save changes</button>
 
     </div>
