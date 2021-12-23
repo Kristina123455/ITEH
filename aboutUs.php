@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="aboutUs.css">
     <script src="javascript/javascript.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="jquery/jquery.js"></script>
+    <script src="jquery/jquery.js"></script>
 </head>
 <body>
 
@@ -124,10 +124,12 @@
             </div>
             <div class="email-box">
                 <div class="email-form">
-                    <input type="text" placeholder="Name...">
-                    <input type="text" placeholder="Email...">
-                    <textarea name="message" id="idMessage" cols="30" rows="10" placeholder="Your message..."></textarea>
-                    <button>Send <img src="images/send.png" alt="send"></button>
+                    <form action="php/sendMail.php" method="post">
+                    <input type="text" name="subject" placeholder="Subject name">
+                    <input type="text" name="mail" placeholder="Email for feedback...">
+                    <textarea name="btn_send" id="idMessage" cols="30" rows="10" placeholder="Your message..."></textarea>
+                    <button id="btn_sendmsg">Send <img src="images/send.png" alt="send"></button>
+                    </form>
                 </div>
                 <div class="email-info">
                     <ul>
@@ -225,6 +227,16 @@
     function myfunction(){
     console.log("Arrow clicked");
 }
+</script>
+
+<script>
+    function sendMail(){
+        const emailTo = 'kristinaneskovic9@gmail.com'
+        const emailCC = 'cc@example.com'
+        const emailSub = 'subject'
+        const emailBody = 'body'
+        window.open(`mailto:${emailTo}?cc=${emailCC}&subject=${emailSub}&body=${emailBody}`, '_self');
+    }
 </script>
 
 </html>
