@@ -65,11 +65,13 @@ include "php/databaseBroker.php";
         <img src="images/hero-image.jpg" alt="hero image" class="hero-img">
     </div>
     <div class="hero-content">
-        
+    
     <div class="container">
+        <form action="php/newsletter-signup.php" method="post">
         <h1>Join the club</h1>
         <p>Click the button, leave an e-mail and be one of the first to be notified of the new movies, news & more!</p>
-        <button>NEWSLETTER</button>
+        <button name="submit_form">NEWSLETTER</button>
+        </form>
         </div>
     </div> 
 </section>
