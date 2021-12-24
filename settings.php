@@ -60,25 +60,28 @@
         <div class="info-box">
         <label for="first-name">First name</label>
         <input type="text" id="first-name" name="firstName" placeholder="First Name" value="<?php echo $_SESSION['user_firstname'] ?>">
+        <button type="submit" name="save_firstname">Save changes</button>
         </div>
 
         <div class="info-box">
         <label for="last-name">Last name</label>
-        <input type="text" id="last-name" name="lastName" placeholder="Last Name" value="<?php echo $_SESSION['user_lastname'] ?>">   
+        <input type="text" id="last-name" name="lastName" placeholder="Last Name" value="<?php echo $_SESSION['user_lastname'] ?>">
+        <button type="submit" name="save_lastname">Save changes</button>
         </div>
     
         <div class="info-box">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['user_email'] ?>">
+        <button type="submit" name="save_email">Save changes</button>
         </div>
 
         <div class="info-box">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Password" value="<?php echo $_SESSION['user_pass'] ?>">
+        <button type="submit" name="save_password">Save changes</button>
         </div>
 
         <hr>
-        <button type="submit" name="save_changes">Save changes</button>
         </form>
 
     </div>
