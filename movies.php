@@ -2,6 +2,26 @@
 
 session_start();
 include "php/databaseBroker.php";
+require "php/movieclass.php";
+
+if(!isset($_SESSION['user_email'])){
+    header('Location: index.php');
+    exit();
+}
+
+$data = Movie::getAllBestMovies($conn);
+
+if(!$data){
+    echo "Error!";
+    die();
+}
+
+if($data->num_rows==0){
+    echo "No movies to show.";
+    die();
+}
+else {
+
 
 ?>
 
@@ -15,6 +35,8 @@ include "php/databaseBroker.php";
     <title>MOVIES</title>
     <link rel="stylesheet" href="styles.css">
     <script src="javascript/javascript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jquery/jquery.js"></script>
 </head>
 <body>
    
@@ -61,147 +83,56 @@ include "php/databaseBroker.php";
     </section>
 
     <section class="hero">
-    <div class="hero">
+        <div class="hero">
         <img src="images/hero-image.jpg" alt="hero image" class="hero-img">
-    </div>
-    <div class="hero-content">
+        </div>
+        <div class="hero-content">
     
-    <div class="container">
+        <div class="container">
         <form action="php/newsletter-signup.php" method="post">
         <h1>Join the club</h1>
         <p>Click the button, leave an e-mail and be one of the first to be notified of the new movies, news & more!</p>
         <button name="submit_form">NEWSLETTER</button>
         </form>
         </div>
-    </div> 
-</section>
+        </div> 
+    </section>
 
     <section id="movies" class="best-movies">
         <h2>Best movies</h2>
         <hr>
         <div class="movie-slider">
             <div class="container">
-
-            <div class="movie">
+        
+        <?php
+            while($row = $data->fetch_array()):
+        ?>
+            <div class="movie" id="<?php echo $row["movie_id"]?>">
                 <span class="like"><img src="images/like.png" alt="add"></span>
                 <div class="movie-picture">
                     <img src="images/movie1.jpg" alt="movie-img">
                 </div>
                 <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
+                    <h5 class="categories"><?php echo $row["category_name"] ?></h5> 
+                    <h4 class="movie-title"><?php echo $row["movie_title"] ?></h4>
+                    <button class="movie-desc">READ MORE</button>
                 </div>
-            </div>
-
-            <div class="movie">
-                <span class="like"><img src="images/like.png" alt="add"></span>
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-
-            <div class="movie">
-                <span class="like"><img src="images/like.png" alt="add"></span>
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-
-            <div class="movie">
-                <span class="like"><img src="images/like.png" alt="add"></span>
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-
-            <div class="movie">
-                <span class="like"><img src="images/like.png" alt="add"></span>
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-            
-            <div class="movie">
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-
-            <div class="movie">
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-            
-            <div class="movie">
-                <span class="like"><img src="images/like.png" alt="add"></span>
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-
-            <div class="movie">
-                <span class="like"><img src="images/like.png" alt="add"></span>
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-
-            <div class="movie">
-                <span class="like"><img src="images/like.png" alt="add"></span>
-                <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
-                </div>
-                <div class="movie-info">
-                    <h5 class="categories">family, comedy</h5> 
-                    <h4 class="movie-title">Xmas with the Kranks</h4>
-                    <button>READ MORE</button>
-                </div>
-            </div>
-
+            </div> 
+       
+    <div id="myDIV" class="hidden" style="display: none;position: fixed;top: 50%;left: auto;right: auto;z-index: 1;background-color: lightblue;border-radius:20px;border: 3px solid cadetblue;width: 70%;">
+    <h6 style="font-size: 18px;margin-top: 10px;text-align: center;margin-bottom: 0;">Read-more section</h6>
+    <p class="paragraph" style="line-height: 1.3;margin: 15px;font-size: 17px;letter-spacing: 0.5px;" >
+    
+    </p>
+    <button onclick="hideInfo()" style="position: absolute;top: 0;right: 0;margin: 7px;" ><b>X</b></button>
+    </div>
+    <?php
+        endwhile;
+        }
+        ?>
         </div>
         </div>
+        
     </section>
 
     <footer>
@@ -237,4 +168,65 @@ include "php/databaseBroker.php";
     </footer>
     
 </body>
+
+<script>
+
+    $(".like").click(function(){
+        var elmId = $(this).parent().attr("id");
+        //alert(elmId); //ID 
+        console.log(elmId);
+        req= $.ajax({
+                type: "POST",
+                url: "php/bestMovies.php",
+                data: {'id':elmId},
+            });
+
+            req.done(function(res, textStatus, jqXHR){
+            if(res=="Success"){
+            alert('Movie added');
+            console.log('Added');
+            }else {
+            console.log("Failed to add movie "+res);
+            alert("Movie already saved! :)  ");
+            }
+            console.log(res);
+        });
+    });
+
+    $(".movie-desc").click(function() {
+        console.log("Click");
+        var elementId = $(this).parent().parent().attr("id");
+        //alert(elementId);
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        
+        req= $.ajax({
+                type: "POST",
+                url: "php/bestMovies.php",
+                data: {'movie_id':elementId},
+            });
+
+            req.done(function(res, textStatus, jqXHR){
+            if(res=="Failed"){
+            $(".paragraph").text("There's no detailed description of the selected film. Contact us if you have any questions :)");
+            }else {
+            $(".paragraph").text(res);
+            }
+            console.log(res);
+        });
+        } else {
+        x.style.display = "none";
+        }
+    });
+
+    function hideInfo(){
+        var x = document.getElementById("myDIV");
+  
+        x.style.display = "none";
+        
+    }
+
+</script>
+
 </html>
