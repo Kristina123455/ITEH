@@ -110,7 +110,7 @@ else {
             <div class="movie" id="<?php echo $row["movie_id"]?>">
                 <span class="like"><img src="images/like.png" alt="add"></span>
                 <div class="movie-picture">
-                    <img src="images/movie1.jpg" alt="movie-img">
+                    <img src="<?php echo $row['movie_pic']?>" alt="movie-img">
                 </div>
                 <div class="movie-info">
                     <h5 class="categories"><?php echo $row["category_name"] ?></h5> 

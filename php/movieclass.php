@@ -57,11 +57,12 @@ class Movie{
         $selectedMovie = mysqli_query($conn, $query);
         $row  = mysqli_fetch_array($selectedMovie);
         if(is_array($row)){
+            $path = $row['movie_pic']; 
             $id=$row['movie_id'];
             $title = $row['movie_title'];
             $category = $row['movie_category'];
             $actors= $row['actors'];
-            $query = "INSERT INTO saved_movies (movie_id, movie_title, category, actors) VALUES ('$id','$title','$category','$actors')";
+            $query = "INSERT INTO saved_movies (movie_pic, movie_id, movie_title, category, actors) VALUES ('$path','$id','$title','$category','$actors')";
             return $conn->query($query);
         }
 

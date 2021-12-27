@@ -84,6 +84,7 @@ else {
     <div class="cells load">
     <table class="saved-movies">
         <thead>
+            <th></th>
             <th>Movie title</th>
             <th>Category</th>
             <th>Actors</th>
@@ -97,6 +98,7 @@ else {
         ?>
 
             <tr id="delete" class="record">
+                <td><img src="<?php echo $row["movie_pic"] ?>" alt=""></td>
                 <td><?php echo $row["movie_title"] ?></td>
                 <td><?php echo $row["category_name"] ?></td>
                 <td><?php echo $row["actors"] ?></td>
