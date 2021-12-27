@@ -81,7 +81,7 @@ else {
         <input type="text" placeholder="Search here..."> 
         <button><img src="images/search.png" alt="search"></button>
     </div>
-    <div class="cells">
+    <div class="cells load">
     <table class="saved-movies">
         <thead>
             <th>Movie title</th>
@@ -96,18 +96,19 @@ else {
             while($row = $data->fetch_array()):
         ?>
 
-            <tr>
+            <tr id="delete" class="record">
                 <td><?php echo $row["movie_title"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["category_name"] ?></td>
                 <td><?php echo $row["actors"] ?></td>
                 <td><img src="images/share.png" alt="share" id="share-movie"></td>
-                <td><img src="images/bin.png" alt="bin" id="delete-movie"></td>
+                <td><a href="#" class="delbutton" id="<?php echo $row["movie_id"]?>" 
+                onclick="deleteAjax(<?php echo $row['movie_id']?>)"><img src="images/bin.png" 
+                alt="bin" id="delete-movie"></a></td> 
             </tr>
             <?php
             endwhile;
         }
             ?>
-           
 
         </tbody>
         <tfoot>
@@ -154,5 +155,49 @@ else {
         </div>
 
     </footer>
+
+    <script type="text/javascript">/*
+        $(document).ready(function(){
+            console.log("JJJJJJJJJJDIWAOSLKJJJJJJJJJJJJJJ");
+            setInterval(function(){
+                $('#load').load("profile.php").fadeIn("slow");
+            }, 1000);
+        });*/
+
+            function deleteAjax(id){
+                var del_id = id;
+                const checked = document.getElementById(id).parentElement.nodeName;
+                var info = 'id='+del_id;
+                if(confirm(checked+"Are you sure you want to delete this record? There is no undo!"+del_id)){
+                    req= $.ajax({
+                       type: "GET",
+                       url: "php/deleteSavedMovie.php",
+                       data: {'id':del_id},
+                    });
+
+                    req.done(function(res, textStatus, jqXHR){
+                    if(res=="Success"){
+                    $toHide= checked.closest('tr');
+                    $toHide.remove();
+                   alert('Record deleted'+res);
+                   console.log('Deleted');
+                    }else {
+                    console.log("Failed to delete record "+res);
+                    alert("Failed to delete record ");
+                    }
+                    console.log(res);
+                    });
+                }
+            }        
+    
+        
+        
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
 </body>
 </html>
