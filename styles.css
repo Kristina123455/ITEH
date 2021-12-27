@@ -352,6 +352,13 @@ section.best-movies .movie-slider .movie .movie-info button:hover{
     
 }
 
+#myDIV{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: aquamarine;
+}
+
 footer .footer-nav{
     background-color: grey;
     padding: 60px 0;
