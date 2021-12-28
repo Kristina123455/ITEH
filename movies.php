@@ -171,6 +171,8 @@ else {
 
 <script>
 
+    //ADD TO SAVED SECTION
+
     $(".like").click(function(){
         var elmId = $(this).parent().attr("id");
         //alert(elmId); //ID 
@@ -192,6 +194,8 @@ else {
             console.log(res);
         });
     });
+
+    //READ-MORE BUTTON
 
     $(".movie-desc").click(function() {
         console.log("Click");
