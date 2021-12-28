@@ -34,6 +34,7 @@ else {
     <title>MOVIES</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="profile.css">
+    
 </head>
 <body>
      
@@ -77,9 +78,12 @@ else {
 
     <div class="table">
     <h2>Liked movies</h2>
-    <div class="search">
-        <input type="text" placeholder="Search here..."> 
-        <button><img src="images/search.png" alt="search"></button>
+    <div class="search search-box">
+        <input id="search_text" name="search_text" type="text" placeholder="Search here..."> 
+        <button id="btn-search"><img src="images/search.png" alt="search"></button>
+        <div id="result">
+
+        </div>
     </div>
     <div class="cells load">
     <table class="saved-movies">
@@ -91,7 +95,7 @@ else {
             <th>Share</th>
             <th>Delete</th>
         </thead>
-        <tbody>
+        <tbody id="saved-movies-table">
 
         <?php
             while($row = $data->fetch_array()):
@@ -158,7 +162,9 @@ else {
 
     </footer>
 
-    <script type="text/javascript">/*
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    /*
         $(document).ready(function(){
             console.log("JJJJJJJJJJDIWAOSLKJJJJJJJJJJJJJJ");
             setInterval(function(){
@@ -166,11 +172,12 @@ else {
             }, 1000);
         });*/
 
-            function deleteAjax(id){
+        function deleteAjax(id){
                 var del_id = id;
-                const checked = document.getElementById(id).parentElement.nodeName;
+                const checked = document.getElementById(id);
+                
                 var info = 'id='+del_id;
-                if(confirm(checked+"Are you sure you want to delete this record? There is no undo!"+del_id)){
+                if(confirm("Are you sure you want to delete this record? There is no undo!")){
                     req= $.ajax({
                        type: "GET",
                        url: "php/deleteSavedMovie.php",
@@ -178,26 +185,30 @@ else {
                     });
 
                     req.done(function(res, textStatus, jqXHR){
-                    if(res=="Success"){
+                    if(res=="Failed"){
+                        console.log("Failed to delete record "+res);
+                    alert("Failed to delete record ");
+                   
+                    }else {
                     $toHide= checked.closest('tr');
                     $toHide.remove();
-                   alert('Record deleted'+res);
-                   console.log('Deleted');
-                    }else {
-                    console.log("Failed to delete record "+res);
-                    alert("Failed to delete record ");
+                    console.log('Record deleted');
                     }
                     console.log(res);
                     });
                 }
-            }        
-    
-        
-        
+        }        
+
+        $('#search_text').on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#saved-movies-table tr").filter(function() {
+         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        });
+
     </script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
 
