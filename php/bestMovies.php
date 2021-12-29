@@ -1,11 +1,12 @@
 <?php 
-
+session_start();
 include "databaseBroker.php";
 include "movieclass.php";
 
 if(isset($_POST['id'])){
     $id = $_POST['id'];
-    $status= Movie::insertById($id,$conn);
+    $userID = $_SESSION['user_id'];
+    $status= Movie::insertById($userID,$id,$conn);
     if ($status){
         echo "Success";
     }else{
