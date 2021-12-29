@@ -10,7 +10,7 @@ if(!isset($_SESSION['user_email'])){
     exit();
 }
 
-$data = Movie::getAll($conn);
+$data = Movie::getAll($_SESSION['user_id'],$conn);
 
 if(!$data){
     echo "Error!";
@@ -82,7 +82,7 @@ else {
         <input id="search_text" name="search_text" type="text" placeholder="Search here..."> 
         <button id="btn-search"><img src="images/search.png" alt="search"></button>
         <div id="result">
-
+            
         </div>
     </div>
     <div class="cells load">
@@ -126,8 +126,10 @@ else {
 
     </div>
 
+    </div>
 
-
+    <div>
+        <p style="text-align:center; margin-top:30px; margin-bottom:30px">Thank you for using our services :)</p>
     </div>
 
     <footer>
