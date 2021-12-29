@@ -17,9 +17,9 @@ class Movie{
     }
 
     //displaying all saved movies
-    public static function getAll(mysqli $conn){
+    public static function getAll($userID, mysqli $conn){
 
-        $query = "SELECT * FROM `saved_movies` INNER JOIN `category` ON saved_movies.category=category.category_id ";
+        $query = "SELECT * FROM `saved_movies` INNER JOIN `category` ON saved_movies.category=category.category_id WHERE saved_movies.user=$userID";
         return $conn->query($query);
 
     }
@@ -51,7 +51,7 @@ class Movie{
         return $conn->query($query);
     }
 
-    public static function insertById($id, mysqli $conn){
+    public static function insertById($userID, $id, mysqli $conn){
 
         $query = "SELECT * FROM best_movies WHERE movie_id='$id'";
         $selectedMovie = mysqli_query($conn, $query);
@@ -62,7 +62,7 @@ class Movie{
             $title = $row['movie_title'];
             $category = $row['movie_category'];
             $actors= $row['actors'];
-            $query = "INSERT INTO saved_movies (movie_pic, movie_id, movie_title, category, actors) VALUES ('$path','$id','$title','$category','$actors')";
+            $query = "INSERT INTO saved_movies (movie_pic, movie_id, movie_title, category, actors, user) VALUES ('$path','$id','$title','$category','$actors', '$userID')";
             return $conn->query($query);
         }
 
