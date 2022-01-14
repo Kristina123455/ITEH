@@ -31,7 +31,6 @@ class Movie{
         return $conn->query($query);
 
     }
-
     //getting movie by id
     public static function getById($id, mysqli $conn){
         $query = "SELECT * FROM saved_movies WHERE movie_id = '$id'";
